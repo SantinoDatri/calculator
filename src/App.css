@@ -1,0 +1,81 @@
+:root {
+  --background: #1e1e2f;
+  --button-bg: #2a2a3b;
+  --button-hover: #3e3e56;
+  --text-color: #ffffff;
+  --accent: #ff5722;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+}
+
+.display {
+  background: #222;
+  color: #0f0;
+  font-size: 2rem;
+  padding: 10px;
+  text-align: right;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  transition: transform 0.2s ease, background-color 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+button:active {
+  transform: scale(0.95);
+  background-color: var(--accent);
+}
+
+button#clear {
+  grid-column: span 2;
+  background: #f00;
+  color: #fff;
+}
+
+button#equals {
+  grid-row: span 2;
+  background: var(--accent);
+  color: #fff;
+}
+
+button.zero {
+  grid-column: span 2;
+}
